@@ -13,7 +13,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
-
+import java.util.Date;
 @Entity
 @Table(name ="movimientos")
 @Data
@@ -29,9 +29,9 @@ public class Movimiento {
     private double monto;
 
     @Column(name = "fechamovimiento")
-    private LocalDate fechaMovimiento;
+    private Date fechaMovimiento;
     
-    @JsonIgnore
+
     @ManyToOne
     @JoinColumn(name = "numerocuenta",referencedColumnName = "numerocuenta")
     private Cuenta cuenta;

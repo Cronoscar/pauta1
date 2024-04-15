@@ -14,18 +14,18 @@ import lombok.Data;
 @Data
 public class direccion {
     @Id
-    @Column(name = "iddireccion")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String idDireccion;
+    @Column(name = "iddireccion")
+    private String iddireccion;
 
     @Column(name = "estado")
-    private double estado;
+    private String estado;
 
     @Column(name = "ciudad")
     private String ciudad;
 
     @Column(name = "calle")
-    private boolean calle;
+    private String calle;
 
     @OneToOne
     @JoinColumn(name = "dni",referencedColumnName = "dni")

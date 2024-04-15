@@ -14,7 +14,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 import java.util.List;
-
+import java.util.Date;
 @Entity
 @Table(name = "cuentas")
 @Data
@@ -27,7 +27,7 @@ public class Cuenta {
     private double saldo;
 
     @Column(name = "fechaapertura")
-    private LocalDate fechaApertura;
+    private Date fechaApertura;
 
     @Column(name = "estado")
     private boolean estado;
@@ -35,7 +35,7 @@ public class Cuenta {
     @Column(name = "sobregiro")
     private boolean sobregiro;
     
-    @JsonIgnore
+    
     @ManyToOne
     @JoinColumn(name="dni",referencedColumnName = "dni")
     private Cliente cliente;
